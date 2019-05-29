@@ -1,0 +1,40 @@
+﻿@model MaestroDetalle.Models.ClaseCliente
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Borrar de Forma Permanente</h2>
+
+<h3>Esta seguro de Borrar?</h3>
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_Compañia_Cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_Compañia_Cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_Contacto_Cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_Contacto_Cliente)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> 
+            @Html.ActionLink("Atras", "Index", new { }, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>

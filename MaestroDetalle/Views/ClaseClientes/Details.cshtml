@@ -1,0 +1,38 @@
+﻿@model MaestroDetalle.Models.ClaseCliente
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>DETALLE DE CLIENTE</h2>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_Compañia_Cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_Compañia_Cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_Contacto_Cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_Contacto_Cliente)
+        </dd>
+
+    </dl>
+</div>
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        @Html.ActionLink("EDITAR", "Edit", new { id = Model.Id_Cliente }, new { @class = "btn btn-default" })
+        @Html.ActionLink("ATRAS", "Index", new { }, new { @class = "btn btn-default" })
+    </div>
+</div>
+
+

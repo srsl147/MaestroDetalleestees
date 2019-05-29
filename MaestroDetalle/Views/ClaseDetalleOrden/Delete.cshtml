@@ -1,0 +1,58 @@
+﻿@model MaestroDetalle.Models.ClaseDetalleOrden
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>ELIMINAR DETALLE DE ORDEN</h2>
+
+<h3>Esta seguro de eliminar?</h3>
+<div>
+ 
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClaseOrdenes.Id_Ordenes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClaseOrdenes.Id_Ordenes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClaseProductos.Nombre_Producto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClaseProductos.Nombre_Producto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cantidad_ClasDetOrd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cantidad_ClasDetOrd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.precio_ClasDetOrd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precio_ClasDetOrd)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" />
+            @Html.ActionLink("Atras", "Index", new { }, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>
+
+

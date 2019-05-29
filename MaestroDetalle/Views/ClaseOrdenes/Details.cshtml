@@ -1,0 +1,39 @@
+﻿@model MaestroDetalle.Models.ClaseOrdenes
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>DETALLE DE ORDEN</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClaseCliente.Nombre_Compañia_Cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClaseCliente.Nombre_Compañia_Cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Orden)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Orden)
+        </dd>
+
+    </dl>
+</div>
+
+
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        @Html.ActionLink("EDITAR", "Edit", new { id = Model.Id_Ordenes }, new { @class = "btn btn-default" })
+        @Html.ActionLink("ATRAS", "Index", new { }, new { @class = "btn btn-default" })
+    </div>
+</div>
+

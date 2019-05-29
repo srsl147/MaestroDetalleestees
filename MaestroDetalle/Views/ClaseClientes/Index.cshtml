@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MaestroDetalle.Models.ClaseCliente>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>LISTADO DE CLIENTES</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { }, new { @class = "btn btn-default" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre_Compañia_Cliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre_Contacto_Cliente)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre_Compañia_Cliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre_Contacto_Cliente)
+        </td>
+        <td>
+            @Html.ActionLink("EDITAR", "Edit", new { id=item.Id_Cliente }, new { @class = "btn btn-default" }) 
+            @Html.ActionLink("DETALLE", "Details", new { id=item.Id_Cliente }, new { @class = "btn btn-default" }) 
+            @Html.ActionLink("BORRAR", "Delete", new { id=item.Id_Cliente }, new { @class = "btn btn-default" })
+        </td>
+    </tr>
+}
+
+</table>

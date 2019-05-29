@@ -1,0 +1,54 @@
+﻿@model IEnumerable<MaestroDetalle.Models.ClaseDetalleOrden>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>DETALLE DE ORDEN</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { }, new { @class = "btn btn-default" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ClaseOrdenes.Id_Ordenes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClaseProductos.Nombre_Producto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cantidad_ClasDetOrd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precio_ClasDetOrd)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClaseOrdenes.Id_Ordenes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClaseProductos.Nombre_Producto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cantidad_ClasDetOrd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precio_ClasDetOrd)
+        </td>
+
+        <td>
+            @Html.ActionLink("EDITAR", "Edit", new { id = item.Id_ClasDetOrd }, new { @class = "btn btn-default" })
+            @Html.ActionLink("DETALLE", "Details", new { id = item.Id_ClasDetOrd }, new { @class = "btn btn-default" })
+
+            @Html.ActionLink("BORRAR", "Delete", new { id = item.Id_ClasDetOrd }, new { @class = "btn btn-default" })
+        </td>
+    </tr>
+}
+
+</table>
+

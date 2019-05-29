@@ -1,0 +1,41 @@
+﻿@model MaestroDetalle.Models.ClaseOrdenes
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>ELIMINAR ORDEN</h2>
+
+<h3>Estas seguro de querer eliminar la Orden?</h3>
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClaseCliente.Nombre_Compañia_Cliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClaseCliente.Nombre_Compañia_Cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha_Orden)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Orden)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" />
+            @Html.ActionLink("Atras", "Index", new { }, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>
+
